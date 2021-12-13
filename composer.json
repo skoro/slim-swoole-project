@@ -2,5 +2,8 @@
     "require": {
         "slim/slim": "^4.9",
         "leocavalcante/request-callback": "^0.1.1"
+    },
+    "require-dev": {
+        "swoole/ide-helper": "^4.8"
     }
 }
