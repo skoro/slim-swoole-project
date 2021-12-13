@@ -1,5 +1,7 @@
 {
     "require": {
+        "php": ">=8.0",
+        "ext-swoole": "^4.8",
         "slim/slim": "^4.9",
         "leocavalcante/request-callback": "^0.1.1"
     },
