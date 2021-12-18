@@ -660,16 +660,16 @@
     "packages-dev": [
         {
             "name": "swoole/ide-helper",
-            "version": "4.8.3",
+            "version": "4.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swoole/ide-helper.git",
-                "reference": "3ac4971814273889933b871e03b2a6b340e58f79"
+                "reference": "feff48c90c87674ee7f1d40dd055edf9a212ad88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/3ac4971814273889933b871e03b2a6b340e58f79",
-                "reference": "3ac4971814273889933b871e03b2a6b340e58f79",
+                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/feff48c90c87674ee7f1d40dd055edf9a212ad88",
+                "reference": "feff48c90c87674ee7f1d40dd055edf9a212ad88",
                 "shasum": ""
             },
             "type": "library",
@@ -686,7 +686,7 @@
             "description": "IDE help files for Swoole.",
             "support": {
                 "issues": "https://github.com/swoole/ide-helper/issues",
-                "source": "https://github.com/swoole/ide-helper/tree/4.8.3"
+                "source": "https://github.com/swoole/ide-helper/tree/4.8.4"
             },
             "funding": [
                 {
@@ -698,7 +698,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-01T08:11:40+00:00"
+            "time": "2021-12-17T05:37:49+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
