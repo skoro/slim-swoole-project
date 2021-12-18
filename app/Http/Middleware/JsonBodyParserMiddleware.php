@@ -11,6 +11,10 @@ class JsonBodyParserMiddleware implements MiddlewareInterface
 {
     public function process(Request $request, RequestHandler $handler): Response
     {
+        if ($request->getMethod() === 'GET') {
+            return $handler->handle($request);
+        }
+
         $contentType = $request->getHeaderLine('Content-Type');
 
         if (str_contains($contentType, 'application/json')) {
