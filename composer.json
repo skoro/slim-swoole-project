@@ -18,5 +18,8 @@
         "files": [
             "app/functions.php"
         ]
+    },
+    "scripts": {
+        "server": "@php server.php"
     }
 }
