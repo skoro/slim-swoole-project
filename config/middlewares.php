@@ -5,9 +5,15 @@ use Slim\App;
 return function (App $app) {
 
     // TODO: debug mode.
+    // Debug mode.
+//    $app->addErrorMiddleware(displayErrorDetails: true, logErrors: true, logErrorDetails: true);
+    // Production mode.
     $app->addErrorMiddleware(displayErrorDetails: false, logErrors: false, logErrorDetails: false);
+
+    // Enable if you need to parse json requests
+    // or add your own.
+//     $app->addBodyParsingMiddleware();
 
     // Put your global middlewares here...
 
-//    $app->add(new \App\Http\Middleware\JsonBodyParserMiddleware());
 };
