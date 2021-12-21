@@ -1,11 +1,15 @@
 {
     "name": "skoro/slim-swoole",
     "description": "Slim Framework + Swoole boilerplate",
+    "keywords": [
+        "microframework", "swoole", "async"
+    ],
+    "type": "project",
     "require": {
         "php": ">=8.0",
         "ext-swoole": "^4.8",
         "slim/slim": "^4.9",
-        "leocavalcante/request-callback": "^0.1.1",
+        "skoro/slim-swoole-integration": "dev-master",
         "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {
