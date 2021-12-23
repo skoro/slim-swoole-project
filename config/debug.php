@@ -24,8 +24,8 @@ return function (App $app, Server $server) {
     // Any changes inside those directories will force to reload the server:
     // - `config`
     // - `app`
-    $watcher->addFilePath(__DIR__);
-    $watcher->addFilePath(dirname(__DIR__) . '/app');
+    $watcher->addFilePath(CONFIG_DIR);
+    $watcher->addFilePath(APP_DIR);
 
     $reloader = new HotCodeReloader($watcher, $server, (int) env('FS_WATCH_DELAY', 1000));
     $reloader->start();
