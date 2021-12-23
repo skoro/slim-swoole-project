@@ -4,11 +4,11 @@ use Slim\App;
 
 return function (App $app) {
 
-    // TODO: debug mode.
-    // Debug mode.
-//    $app->addErrorMiddleware(displayErrorDetails: true, logErrors: true, logErrorDetails: true);
-    // Production mode.
-    $app->addErrorMiddleware(displayErrorDetails: false, logErrors: false, logErrorDetails: false);
+    if (is_debug_enabled()) {
+        $app->addErrorMiddleware(displayErrorDetails: true, logErrors: true, logErrorDetails: true);
+    } else {
+        $app->addErrorMiddleware(displayErrorDetails: false, logErrors: false, logErrorDetails: false);
+    }
 
     // Enable if you need to parse json requests
     // or add your own.

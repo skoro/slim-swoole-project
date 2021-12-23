@@ -19,3 +19,11 @@ function env(string $param, mixed $default = null)
 {
     return $_ENV[$param] ?? $_SERVER[$param] ?? $default;
 }
+
+/**
+ * Check whether DEBUG environment variable is set.
+ */
+function is_debug_enabled(): bool
+{
+    return (bool) env('DEBUG', false);
+}

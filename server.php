@@ -28,4 +28,12 @@ $server->on('workerStart', function (HttpServer $server) use ($app) {
 
 $server->on('request', ServerRequestFactory::createRequestCallback($app));
 
+$server->on('start', function (HttpServer $server) use ($app) {
+    if (is_debug_enabled()) {
+        (function ($app, $server) {
+            (include __DIR__ . '/config/debug.php')($app, $server);
+        })($app, $server);
+    }
+});
+
 $server->start();
