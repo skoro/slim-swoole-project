@@ -4,6 +4,18 @@
     "keywords": [
         "microframework", "swoole", "async"
     ],
+    "authors": [
+        {
+            "name": "Oleksii Skorobogatko",
+            "email": "skorobogatko.oleksii@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/skoro/slim-swoole",
+        "issues": "https://github.com/skoro/slim-swoole/issues",
+        "wiki": "https://github.com/skoro/slim-swoole/wiki"
+    },
     "type": "project",
     "require": {
         "php": ">=8.0",
