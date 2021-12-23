@@ -1,6 +1,6 @@
 {
     "name": "skoro/slim-swoole",
-    "description": "Slim Framework + Swoole boilerplate",
+    "description": "Slim Framework + Swoole project boilerplate",
     "keywords": [
         "microframework", "swoole", "async"
     ],
