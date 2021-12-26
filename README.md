@@ -46,3 +46,6 @@ Instead of editing your `.env` you could start the server like this:
 ```bash
 DEBUG=true composer run server
 ```
+
+When you need to stop or restart the server by an external command
+like `kill` you also can use a pid file which is located in `var/server.pid` directory.
