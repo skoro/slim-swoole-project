@@ -1,8 +1,8 @@
 {
-    "name": "skoro/slim-swoole",
+    "name": "skoro/slim-swoole-project",
     "description": "Slim Framework + Swoole project boilerplate",
     "keywords": [
-        "microframework", "swoole", "async"
+        "microframework", "swoole", "async", "project template"
     ],
     "authors": [
         {
@@ -12,9 +12,9 @@
         }
     ],
     "support": {
-        "source": "https://github.com/skoro/slim-swoole",
-        "issues": "https://github.com/skoro/slim-swoole/issues",
-        "wiki": "https://github.com/skoro/slim-swoole/wiki"
+        "source": "https://github.com/skoro/slim-swoole-project",
+        "issues": "https://github.com/skoro/slim-swoole-project/issues",
+        "wiki": "https://github.com/skoro/slim-swoole-project/wiki"
     },
     "type": "project",
     "require": {
