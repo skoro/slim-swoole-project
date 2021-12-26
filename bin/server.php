@@ -5,12 +5,12 @@ use Slim\Factory\AppFactory;
 use Slim\Swoole\ServerRequestFactory;
 use Swoole\Http\Server as HttpServer;
 
-const ROOT_DIR = __DIR__;
+define('ROOT_DIR', dirname(__DIR__));
 const CONFIG_DIR = ROOT_DIR . '/config/';
 const APP_DIR = ROOT_DIR . '/app/';
 const VAR_DIR = ROOT_DIR . '/var/';
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once ROOT_DIR . '/vendor/autoload.php';
 
 $dotenv = Dotenv::createImmutable(ROOT_DIR);
 $dotenv->safeLoad();
@@ -39,7 +39,8 @@ $server->on('request', ServerRequestFactory::createRequestCallback($app));
 $server->on('start', function (HttpServer $server) use ($app) {
     if (is_debug_enabled()) {
         (function ($app, $server) {
-            (include __DIR__ . '/config/debug.php')($app, $server);
+            // Debug configuration is optional and can be ignored.
+            (include CONFIG_DIR . 'debug.php')($app, $server);
         })($app, $server);
     }
 });
