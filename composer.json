@@ -4,6 +4,7 @@
     "keywords": [
         "microframework", "swoole", "async", "project template"
     ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Oleksii Skorobogatko",
