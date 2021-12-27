@@ -39,6 +39,7 @@
         ]
     },
     "scripts": {
-        "server": "@php bin/server.php"
+        "server": "@php bin/server.php",
+        "build-container": "zen build ./app/Container/Container.php \"App\\Container\\CompilerConfig\""
     }
 }
