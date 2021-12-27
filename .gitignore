@@ -2,3 +2,6 @@
 /vendor/
 .env
 
+# Compiled DI container.
+app/Container/Container.php
+
