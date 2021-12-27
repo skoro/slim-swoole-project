@@ -36,7 +36,14 @@
             "app/functions.php"
         ]
     },
+    "config": {
+        "process-timeout": 0
+    },
     "scripts": {
-        "server": "@php bin/server.php"
+        "server": "@php bin/server.php",
+        "server-debug": [
+            "@putenv DEBUG=true",
+            "@server"
+        ]
     }
 }
