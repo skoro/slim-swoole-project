@@ -21,7 +21,7 @@
         "php": ">=8.0",
         "ext-swoole": "^4.8",
         "slim/slim": "^4.9",
-        "skoro/slim-swoole-integration": "dev-master",
+        "skoro/slim-swoole-integration": "^0.1",
         "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {

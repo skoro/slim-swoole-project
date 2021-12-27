@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e54556b88509052ba878e83dc12ad50",
+    "content-hash": "59fa2b6619668d5d516b70a6c6945629",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -677,6 +677,63 @@
             "time": "2021-07-14T16:46:02+00:00"
         },
         {
+            "name": "skoro/slim-swoole-integration",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skoro/slim-swoole-integration.git",
+                "reference": "ff4eb470d6f2db1ae35091f256136398926bf213"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skoro/slim-swoole-integration/zipball/ff4eb470d6f2db1ae35091f256136398926bf213",
+                "reference": "ff4eb470d6f2db1ae35091f256136398926bf213",
+                "shasum": ""
+            },
+            "require": {
+                "ext-swoole": "^4.8",
+                "leocavalcante/request-callback": "^0.1.1",
+                "php": "^8.0",
+                "slim/slim": "^4.9"
+            },
+            "require-dev": {
+                "swoole/ide-helper": "^4.8"
+            },
+            "suggest": {
+                "ext-inotify": "Needed to enable hot code reloading"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Slim\\Swoole\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleksii Skorobogatko",
+                    "email": "skorobogatko.oleksii@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Integration of Slim framework and Swoole - event driven asynchronous library",
+            "keywords": [
+                "async",
+                "event-driven",
+                "framework",
+                "slim",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/skoro/slim-swoole-integration/issues",
+                "source": "https://github.com/skoro/slim-swoole-integration"
+            },
+            "time": "2021-12-27T09:17:22+00:00"
+        },
+        {
             "name": "slim/slim",
             "version": "4.9.0",
             "source": {
@@ -1254,5 +1311,5 @@
         "ext-swoole": "^4.8"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
