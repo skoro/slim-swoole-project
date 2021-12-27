@@ -25,5 +25,5 @@ function env(string $param, mixed $default = null)
  */
 function is_debug_enabled(): bool
 {
-    return (bool) env('DEBUG', false);
+    return strtolower(env('DEBUG', 'false')) === 'true';
 }
