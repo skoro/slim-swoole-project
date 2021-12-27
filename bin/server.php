@@ -15,6 +15,10 @@ require_once ROOT_DIR . '/vendor/autoload.php';
 $dotenv = Dotenv::createImmutable(ROOT_DIR);
 $dotenv->safeLoad();
 
+AppFactory::setContainer((function () {
+    return (require CONFIG_DIR . 'container.php')();
+})());
+
 $app = AppFactory::create();
 
 $server = new HttpServer(env('SERVER_ADDR', 'localhost'), env('SERVER_PORT', 9501));
