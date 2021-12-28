@@ -54,21 +54,7 @@ $ composer run server-debug
 
 ## Dependency Injection
 
-This project uses [Zen](https://github.com/woohoolabs/zen) DI container
-as pretty fast and simple for configuring. But it's up to you which
-container to use. If you want to use your own container you have to
-return the container instance in `config/container.php` function.
-Keep in mind, a container must be compatible with `psr-11`, this is
-a requirement of Slim framework.
-
-If you want to continue with Zen, please read the [documentation](https://github.com/woohoolabs/zen/blob/master/README.md).
-Since Zen is a compiled based container you have to manually build
-the container if you are not using the debug mode `DEBUG=false`
-otherwise `RuntimeContainer` will be used.
-For building, you could use the following command:
-```bash
-$ composer run build-container
-```
-
-The dependencies are declared in `app\Container\ContainerConfig` class.
-In the provided class, there is injection for route controllers. 
+This project uses [PHP-DI](https://php-di.org/) container implementation.
+The container itself and its dependencies are configured in `config/container.php`
+file. Keep in mind, you can use any [psr-11](https://www.php-fig.org/psr/psr-11/)
+compatible container, so it's up to you which container to use.
