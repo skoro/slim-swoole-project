@@ -37,6 +37,11 @@ $ composer run server
 It will listen to `localhost` and `9501` port if you left
 `SERVER_ADDR` and `SERVER_PORT` environment variables by default.
 
+When you need to stop or restart the server by an external command
+like `kill` you also can use a pid file which is located in `var/server.pid` directory.
+
+### Debug
+
 Please keep in mind, changing your project source code won't be
 applied automatically, you need to restart the server manually.
 To make life easier, you could enable `DEBUG=true` mode in your `.env` and the server
@@ -44,11 +49,8 @@ will restart automatically depending on the project source code
 changes but this feature requires `inotify` extension to be installed.
 Instead of editing your `.env` you could start the server like this:
 ```bash
-DEBUG=true composer run server
+$ composer run server-debug
 ```
-
-When you need to stop or restart the server by an external command
-like `kill` you also can use a pid file which is located in `var/server.pid` directory.
 
 ## Dependency Injection
 

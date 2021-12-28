@@ -4,6 +4,7 @@
     "keywords": [
         "microframework", "swoole", "async", "project template"
     ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Oleksii Skorobogatko",
@@ -38,8 +39,15 @@
             "app/functions.php"
         ]
     },
+    "config": {
+        "process-timeout": 0
+    },
     "scripts": {
         "server": "@php bin/server.php",
+        "server-debug": [
+            "@putenv DEBUG=true",
+            "@server"
+        ],
         "build-container": "zen build ./app/Container/Container.php \"App\\Container\\CompilerConfig\""
     }
 }

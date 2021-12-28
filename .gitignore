@@ -1,6 +1,10 @@
-/.idea/
+# PHP Storm and VSCode settings.
+.idea/
+.vscode/
+
 /vendor/
 .env
+.phpunit.result.cache
 
 # Compiled DI container.
 app/Container/Container.php
