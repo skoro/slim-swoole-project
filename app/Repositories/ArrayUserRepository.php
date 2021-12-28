@@ -7,6 +7,9 @@ use App\Entities\User;
 class ArrayUserRepository implements UserRepository
 {
 
+    /**
+     * @return User[]
+     */
     public function all(): array
     {
         return [
