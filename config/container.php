@@ -1,18 +1,21 @@
 <?php declare(strict_types=1);
 
-use App\Container\CompilerConfig;
-use App\Container\Container;
+use App\Repositories\ArrayUserRepository;
+use App\Repositories\UserRepository;
+use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
-use WoohooLabs\Zen\RuntimeContainer;
+use function DI\create;
 
 /**
  * Gets the PSR-11 compatible DI container.
  */
 return function (): ContainerInterface {
 
-    if (is_debug_enabled()) {
-        return new RuntimeContainer(new CompilerConfig());
-    }
+    $builder = new ContainerBuilder();
 
-    return new Container();
+    $builder->addDefinitions([
+        UserRepository::class => create(ArrayUserRepository::class),
+    ]);
+
+    return $builder->build();
 };
