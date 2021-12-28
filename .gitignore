@@ -1,4 +1,7 @@
-/.idea/
+# PHP Storm and VSCode settings.
+.idea/
+.vscode/
+
 /vendor/
 .env
-
+.phpunit.result.cache
