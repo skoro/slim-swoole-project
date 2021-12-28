@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\UserRepository;
 use Psr\Http\Message\ResponseInterface;
 
-class GetAllUsersController
+class GetAllUsersHttpController
 {
     public function __construct(private UserRepository $userRepository)
     {
@@ -13,6 +13,8 @@ class GetAllUsersController
 
     public function __invoke(): ResponseInterface
     {
-        return json($this->userRepository->all());
+        return json([
+            'users' => $this->userRepository->all(),
+        ]);
     }
 }
