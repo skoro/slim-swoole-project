@@ -27,6 +27,8 @@ return function (App $app, Server $server) {
     $watcher->addFilePath(CONFIG_DIR);
     $watcher->addFilePath(APP_DIR);
 
+    $app->getContainer()->get(\Psr\Log\LoggerInterface::class)->debug('Debug mode is enabled.');
+
     $reloader = new HotCodeReloader($watcher, $server, (int) env('FS_WATCH_DELAY', 1000));
     $reloader->start();
 

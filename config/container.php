@@ -17,5 +17,14 @@ return function (): ContainerInterface {
         UserRepository::class => create(ArrayUserRepository::class),
     ]);
 
+    $builder->addDefinitions([
+        \Psr\Log\LoggerInterface::class => function (ContainerInterface $c) {
+            $logger = new \Monolog\Logger(env('APP_NAME', 'slim-swoole'));
+            $logger->pushProcessor(new \Monolog\Processor\UidProcessor());
+            $logger->pushHandler(new \Monolog\Handler\StreamHandler('php://stdout'));
+            return $logger;
+        },
+    ]);
+
     return $builder->build();
 };
