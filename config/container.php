@@ -5,6 +5,9 @@ use App\Container\Container;
 use Psr\Container\ContainerInterface;
 use WoohooLabs\Zen\RuntimeContainer;
 
+/**
+ * Gets the PSR-11 compatible DI container.
+ */
 return function (): ContainerInterface {
 
     if (is_debug_enabled()) {
