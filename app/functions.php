@@ -2,6 +2,9 @@
 
 use Laminas\Diactoros\Response\JsonResponse;
 use PhpOption\Option;
+use Psr\Log\LoggerInterface;
+use Slim\App;
+use Slim\Logger as DumpLogger;
 
 if (! function_exists('json')) {
     /**
@@ -39,5 +42,20 @@ if (! function_exists('is_debug_enabled')) {
     function is_debug_enabled(): bool
     {
         return (bool) env('DEBUG', false);
+    }
+}
+
+if (! function_exists('logger')) {
+    /**
+     * Get the application logger.
+     *
+     * This function checks the app container for the logger firstly
+     * and if it's missing creates a very simple one.
+     */
+    function logger(App $app): LoggerInterface
+    {
+        $container = $app->getContainer();
+        return $container?->has(LoggerInterface::class)
+             ? $container->get(LoggerInterface::class) : new DumpLogger();
     }
 }
