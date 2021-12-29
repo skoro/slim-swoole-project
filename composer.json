@@ -25,7 +25,7 @@
         "skoro/slim-swoole-integration": "^0.1",
         "vlucas/phpdotenv": "^5.4",
         "psr/container": "^1.0",
-        "woohoolabs/zen": "^3.0"
+        "php-di/php-di": "^6.3"
     },
     "require-dev": {
         "swoole/ide-helper": "^4.8",
@@ -47,7 +47,6 @@
         "server-debug": [
             "@putenv DEBUG=true",
             "@server"
-        ],
-        "build-container": "zen build ./app/Container/Container.php \"App\\Container\\CompilerConfig\""
+        ]
     }
 }

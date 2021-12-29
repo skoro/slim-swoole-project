@@ -5,7 +5,3 @@
 /vendor/
 .env
 .phpunit.result.cache
-
-# Compiled DI container.
-app/Container/Container.php
-
