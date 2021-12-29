@@ -30,4 +30,5 @@ return function (App $app, Server $server) {
     $reloader = new HotCodeReloader($watcher, $server, (int) env('FS_WATCH_DELAY', 1000));
     $reloader->start();
 
+    logger($app)->debug('Debug mode and hot code reloading are enabled.');
 };
