@@ -4,6 +4,12 @@ use App\Repositories\ArrayUserRepository;
 use App\Repositories\UserRepository;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
+use Psr\Log\LoggerInterface;
+use Monolog\Logger;
+use Monolog\Processor\UidProcessor;
+use Monolog\Handler\StreamHandler;
+use Monolog\Processor\ProcessIdProcessor;
+
 use function DI\create;
 
 /**
@@ -18,10 +24,11 @@ return function (): ContainerInterface {
     ]);
 
     $builder->addDefinitions([
-        \Psr\Log\LoggerInterface::class => function (ContainerInterface $c) {
-            $logger = new \Monolog\Logger(env('APP_NAME', 'slim-swoole'));
-            $logger->pushProcessor(new \Monolog\Processor\UidProcessor());
-            $logger->pushHandler(new \Monolog\Handler\StreamHandler('php://stdout'));
+        LoggerInterface::class => function (ContainerInterface $c) {
+            $logger = new Logger(env('APP_NAME', 'slim-swoole'));
+            $logger->pushProcessor(new ProcessIdProcessor());
+            $logger->pushProcessor(new UidProcessor());
+            $logger->pushHandler(new StreamHandler('php://stdout'));
             return $logger;
         },
     ]);
