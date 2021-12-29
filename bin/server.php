@@ -47,6 +47,7 @@ $server->on('start', function (HttpServer $server) use ($app) {
             (include CONFIG_DIR . 'debug.php')($app, $server);
         })($app, $server);
     }
+    logger($app)->info('Server is started.');
 });
 
 $server->start();
