@@ -28,7 +28,9 @@ return function (): ContainerInterface {
             $logger = new Logger(env('APP_NAME', 'slim-swoole'));
             $logger->pushProcessor(new ProcessIdProcessor());
             $logger->pushProcessor(new UidProcessor());
-            $logger->pushHandler(new StreamHandler('php://stdout'));
+            $logger->pushHandler(
+                new StreamHandler('php://stdout', is_debug_enabled() ? Logger::DEBUG : Logger::INFO)
+            );
             return $logger;
         },
     ]);
