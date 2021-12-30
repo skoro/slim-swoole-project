@@ -58,6 +58,7 @@
             "@server"
         ],
         "test": "phpunit",
-        "test-f": "phpunit --filter"
+        "test-f": "phpunit --filter",
+        "check": "phpstan"
     }
 }
