@@ -12,6 +12,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
  */
 trait SendRequest
 {
+    /**
+     * @param array<string, string> $headers
+     */
     protected function get(string $path, array $headers = []): Response
     {
         return $this->submitRequest(
@@ -19,6 +22,9 @@ trait SendRequest
         );
     }
 
+    /**
+     * @param array<string, string> $headers
+     */
     protected function getJson(string $path, array $headers = []): mixed
     {
         return $this->getResponseAsJson(
@@ -26,6 +32,10 @@ trait SendRequest
         );
     }
 
+    /**
+     * @param null|array<mixed>|object $body
+     * @param array<string, string> $headers
+     */
     protected function post(string $path, $body, array $headers = []): Response
     {
         return $this->submitRequest(
@@ -43,6 +53,12 @@ trait SendRequest
         return json_decode($response->getBody()->getContents(), associative: true, flags: JSON_THROW_ON_ERROR);
     }
 
+    /**
+     * @param array<string, string> $headers
+     * @param array<string, string> $cookies
+     * @param array<string, string> $serverParams
+     * @param array<mixed>|object|null $parsedBody
+     */
     private function createRequest(
         string $method,
         string $path,
