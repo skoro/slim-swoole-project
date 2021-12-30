@@ -3,8 +3,6 @@
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          bootstrap="./tests/bootstrap.php"
          executionOrder="depends,defects"
-         forceCoversAnnotation="true"
-         beStrictAboutCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
          convertDeprecationsToExceptions="true"
@@ -18,11 +16,4 @@
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
-
-    <coverage cacheDirectory=".phpunit.cache/code-coverage"
-              processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">app</directory>
-        </include>
-    </coverage>
 </phpunit>
