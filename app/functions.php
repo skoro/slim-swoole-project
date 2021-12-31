@@ -9,6 +9,8 @@ use Slim\Logger as DumpLogger;
 if (! function_exists('json')) {
     /**
      * JSON response wrapper.
+     *
+     * @param array<string, string> $headers
      */
     function json(mixed $data, int $status = 200, array $headers = []): JsonResponse
     {

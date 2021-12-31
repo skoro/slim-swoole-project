@@ -34,6 +34,9 @@ class User implements JsonSerializable
         return $this->active;
     }
 
+    /**
+     * @return array<string, string|int|bool>
+     */
     public function jsonSerialize(): array
     {
         return [
