@@ -1010,16 +1010,16 @@
         },
         {
             "name": "skoro/slim-swoole-integration",
-            "version": "0.1",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skoro/slim-swoole-integration.git",
-                "reference": "ff4eb470d6f2db1ae35091f256136398926bf213"
+                "reference": "e14493618a2ddf9940f56522214f4d6d0ef4ea6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skoro/slim-swoole-integration/zipball/ff4eb470d6f2db1ae35091f256136398926bf213",
-                "reference": "ff4eb470d6f2db1ae35091f256136398926bf213",
+                "url": "https://api.github.com/repos/skoro/slim-swoole-integration/zipball/e14493618a2ddf9940f56522214f4d6d0ef4ea6d",
+                "reference": "e14493618a2ddf9940f56522214f4d6d0ef4ea6d",
                 "shasum": ""
             },
             "require": {
@@ -1063,7 +1063,7 @@
                 "issues": "https://github.com/skoro/slim-swoole-integration/issues",
                 "source": "https://github.com/skoro/slim-swoole-integration"
             },
-            "time": "2021-12-27T09:17:22+00:00"
+            "time": "2021-12-31T13:29:31+00:00"
         },
         {
             "name": "slim/slim",
