@@ -7,5 +7,4 @@ RUN pecl update-channels \
 	&& docker-php-ext-install opcache \
 	&& docker-php-ext-enable inotify
 
-RUN composer install
-
+RUN composer selfupdate
