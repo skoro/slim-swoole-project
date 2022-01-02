@@ -4,7 +4,8 @@ COPY . /var/www
 
 RUN pecl update-channels \
 	&& pecl install inotify \
-	&& docker-php-ext-install opcache
+	&& docker-php-ext-install opcache \
+	&& docker-php-ext-enable inotify
 
 RUN composer install
 
