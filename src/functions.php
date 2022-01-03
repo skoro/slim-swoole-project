@@ -14,7 +14,11 @@ if (! function_exists('json')) {
      */
     function json(mixed $data, int $status = 200, array $headers = []): JsonResponse
     {
-        return new JsonResponse($data, $status, $headers);
+        return new JsonResponse(
+            $data instanceof JsonSerializable ? $data->jsonSerialize() : $data,
+            $status,
+            $headers
+        );
     }
 }
 
