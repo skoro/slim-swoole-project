@@ -51,7 +51,7 @@ if (! function_exists('logger')) {
     /**
      * Get the application logger.
      *
-     * This function checks the app container for the logger firstly
+     * This function checks the src container for the logger firstly
      * and if it's missing creates a very simple one.
      */
     function logger(App $app): LoggerInterface

@@ -23,7 +23,7 @@ return function (App $app, Server $server) {
     // Directories to be checked for changes.
     // Any changes inside those directories will force to reload the server:
     // - `config`
-    // - `app`
+    // - `src`
     $watcher->addFilePath(CONFIG_DIR);
     $watcher->addFilePath(APP_DIR);
 

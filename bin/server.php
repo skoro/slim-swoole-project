@@ -7,7 +7,7 @@ use Swoole\Http\Server as HttpServer;
 
 define('ROOT_DIR', dirname(__DIR__));
 const CONFIG_DIR = ROOT_DIR . '/config/';
-const APP_DIR = ROOT_DIR . '/app/';
+const APP_DIR = ROOT_DIR . '/src/';
 const VAR_DIR = ROOT_DIR . '/var/';
 
 require_once ROOT_DIR . '/vendor/autoload.php';

@@ -13,7 +13,7 @@ return function (App $app) {
 
     // Enable if you need to parse json requests
     // or add your own.
-//     $app->addBodyParsingMiddleware();
+//     $src->addBodyParsingMiddleware();
 
     // Put your global middlewares here...
 
