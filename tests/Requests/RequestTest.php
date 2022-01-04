@@ -12,7 +12,7 @@ class RequestTest extends TestCase
         $response = $this->getJson('/');
 
         $response->assertStatusCode(200);
-        $this->assertEquals(['status' => 'ok'], $response->asJson());
+        $this->assertEquals(['status' => 'ok'], $response->asArray());
     }
 
     /** @test */
@@ -21,6 +21,7 @@ class RequestTest extends TestCase
         $response = $this->getJson('/not-found-page');
 
         $response->assertStatusCode(404);
-        $this->assertEquals(['message' => '404 Not Found'], $response->asJson());
+        $this->assertArrayHasKey('message', $response->asArray());
+        $this->assertEquals('404 Not Found', $response->asArray()['message']);
     }
 }

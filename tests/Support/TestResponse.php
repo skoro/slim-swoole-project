@@ -21,9 +21,11 @@ class TestResponse implements Response
     }
 
     /**
-     * @throws JsonException
+     * Converts the JSON response to an array.
+     *
+     * @throws JsonException When the response content cannot be converted to a JSON.
      */
-    public function asJson(): mixed
+    public function asArray(): mixed
     {
         return json_decode($this->asString(), associative: true, flags: JSON_THROW_ON_ERROR);
     }
