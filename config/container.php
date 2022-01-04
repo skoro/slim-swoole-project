@@ -29,7 +29,7 @@ return function (): ContainerInterface {
             $logger->pushProcessor(new ProcessIdProcessor());
             $logger->pushProcessor(new UidProcessor());
             $logger->pushHandler(
-                new StreamHandler('php://stdout', is_debug_enabled() ? Logger::DEBUG : Logger::INFO)
+                new StreamHandler(env('LOG_FILE', 'php://stdout'), is_debug_enabled() ? Logger::DEBUG : Logger::INFO)
             );
             return $logger;
         },
