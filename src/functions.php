@@ -29,11 +29,11 @@ if (! function_exists('env')) {
             return $value;
         }
         return Option::fromValue($value)->map(fn ($value) => match (strtolower($value)) {
-            'false' => false,
-            'true'  => true,
-            'null'  => null,
-            default => $value,
-        })->get();
+            'false'     => false,
+            'true'      => true,
+            '', 'null'  => null,
+            default     => $value,
+        })->get() ?? $default;
     }
 }
 
