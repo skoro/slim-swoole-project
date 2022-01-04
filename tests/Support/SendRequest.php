@@ -4,7 +4,6 @@ namespace Tests\Support;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
-use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
@@ -15,7 +14,7 @@ trait SendRequest
     /**
      * @param array<string, string> $headers
      */
-    protected function get(string $path, array $headers = []): Response
+    protected function get(string $path, array $headers = []): TestResponse
     {
         return $this->submitRequest(
             $this->createRequest('GET', $path, $headers)
@@ -25,32 +24,25 @@ trait SendRequest
     /**
      * @param array<string, string> $headers
      */
-    protected function getJson(string $path, array $headers = []): mixed
+    protected function getJson(string $path, array $headers = []): TestResponse
     {
-        return $this->getResponseAsJson(
-            $this->get($path, ['HTTP_ACCEPT' => 'application/json'] + $headers)
-        );
+        return $this->get($path, ['Accept' => 'application/json'] + $headers);
     }
 
     /**
      * @param null|array<mixed>|object $body
      * @param array<string, string> $headers
      */
-    protected function post(string $path, $body, array $headers = []): Response
+    protected function post(string $path, $body, array $headers = []): TestResponse
     {
         return $this->submitRequest(
             $this->createRequest('POST', $path, $headers, parsedBody: $body)
         );
     }
 
-    private function submitRequest(Request $request): Response
+    private function submitRequest(Request $request): TestResponse
     {
-        return $this->app->handle($request);
-    }
-
-    private function getResponseAsJson(Response $response): mixed
-    {
-        return json_decode($response->getBody()->getContents(), associative: true, flags: JSON_THROW_ON_ERROR);
+        return new TestResponse($this, $this->app->handle($request));
     }
 
     /**

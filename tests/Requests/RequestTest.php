@@ -9,16 +9,18 @@ class RequestTest extends TestCase
     /** @test */
     public function it_returns_status_ok_from_index_route(): void
     {
-        $payload = $this->getJson('/');
+        $response = $this->getJson('/');
 
-        $this->assertEquals(['status' => 'ok'], $payload);
+        $response->assertStatusCode(200);
+        $this->assertEquals(['status' => 'ok'], $response->asJson());
     }
 
     /** @test */
     public function requesting_non_existing_route_returns_404(): void
     {
-        $response = $this->get('/not-found-page');
+        $response = $this->getJson('/not-found-page');
 
-        $this->assertEquals(404, $response->getStatusCode());
+        $response->assertStatusCode(404);
+        $this->assertEquals(['message' => '404 Not Found'], $response->asJson());
     }
 }
