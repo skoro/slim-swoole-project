@@ -1,7 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests;
 
+use Dotenv\Dotenv;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Slim\App;
 use Slim\Factory\AppFactory;
@@ -21,7 +22,11 @@ class TestCase extends BaseTestCase
 
     private function getAppInstance(): App
     {
-        $configDir = dirname(__DIR__) . '/config/';
+        $rootDir = dirname(__DIR__);
+        $configDir = $rootDir . '/config/';
+
+        $dotenv = Dotenv::createImmutable($rootDir, ['.env.testing', '.env']);
+        $dotenv->safeLoad();
 
         AppFactory::setContainer((require $configDir . 'container.php')());
         $app = AppFactory::create();
