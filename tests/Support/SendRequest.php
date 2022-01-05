@@ -59,8 +59,8 @@ trait SendRequest
         array $serverParams = [],
         null|array|object $parsedBody = null,
     ): Request {
-        $uri = new Uri();
-        $uri = $uri->withPath($path);
+        $uri = new Uri($path);
+        parse_str($uri->getQuery(), $query);
 
         return new ServerRequest(
             serverParams: $serverParams,
@@ -70,6 +70,7 @@ trait SendRequest
             cookies: $cookies,
             parsedBody: $parsedBody,
             body: 'php://temp',
+            queryParams: $query,
         );
     }
 }
