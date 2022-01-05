@@ -5,12 +5,7 @@ use Slim\Factory\AppFactory;
 use Slim\Swoole\ServerRequestFactory;
 use Swoole\Http\Server as HttpServer;
 
-define('ROOT_DIR', dirname(__DIR__));
-const APP_DIR = ROOT_DIR . '/app/';
-const SRC_DIR = ROOT_DIR . '/src/';
-const VAR_DIR = ROOT_DIR . '/var/';
-
-require_once ROOT_DIR . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $dotenv = Dotenv::createImmutable(ROOT_DIR);
 $dotenv->safeLoad();
