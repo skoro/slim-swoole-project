@@ -52,6 +52,9 @@ Instead of editing your `.env` you could start the server like this:
 $ composer run server-debug
 ```
 
+You should also pay an attention [xdebug](http://xdebug.org/) is not compatible
+with Swoole (https://openswoole.com/docs/get-started/common-install-errors#trying-to-use-xdebug-and-swoole).
+
 ## Dependency Injection
 
 This project uses [PHP-DI](https://php-di.org/) container implementation.
