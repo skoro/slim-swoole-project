@@ -1,7 +1,5 @@
 <?php declare(strict_types=1);
 
-use App\Repositories\ArrayUserRepository;
-use App\Repositories\UserRepository;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
@@ -19,9 +17,10 @@ return function (): ContainerInterface {
 
     $builder = new ContainerBuilder();
 
-    $builder->addDefinitions([
-        UserRepository::class => create(ArrayUserRepository::class),
-    ]);
+    // Your own definitions...
+//    $builder->addDefinitions([
+//        UserRepository::class => create(ArrayUserRepository::class),
+//    ]);
 
     $builder->addDefinitions([
         LoggerInterface::class => function (ContainerInterface $c) {
