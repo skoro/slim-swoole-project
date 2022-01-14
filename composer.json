@@ -40,7 +40,7 @@
             "App\\": "src/"
         },
         "files": [
-            "src/functions.php"
+            "app/functions.php"
         ]
     },
     "autoload-dev": {

@@ -23,16 +23,16 @@ class TestCase extends BaseTestCase
     private function getAppInstance(): App
     {
         $rootDir = dirname(__DIR__);
-        $configDir = $rootDir . '/config/';
+        $appDir = $rootDir . '/app/';
 
         $dotenv = Dotenv::createImmutable($rootDir, ['.env.testing', '.env']);
         $dotenv->safeLoad();
 
-        AppFactory::setContainer((require $configDir . 'container.php')());
+        AppFactory::setContainer((require $appDir . 'container.php')());
         $app = AppFactory::create();
 
-        (require $configDir . 'middlewares.php')($app);
-        (require $configDir . 'routes.php')($app);
+        (require $appDir . 'middlewares.php')($app);
+        (require $appDir . 'routes.php')($app);
 
         return $app;
     }

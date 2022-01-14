@@ -6,6 +6,19 @@ use Psr\Log\LoggerInterface;
 use Slim\App;
 use Slim\Logger as DumpLogger;
 
+if (! defined('ROOT_DIR')) {
+    define('ROOT_DIR', dirname(__DIR__));
+}
+if (! defined('APP_DIR')) {
+    define('APP_DIR', ROOT_DIR . '/app/');
+}
+if (! defined('VAR_DIR')) {
+    define('VAR_DIR', ROOT_DIR . '/var/');
+}
+if (! defined('SRC_DIR')) {
+    define('SRC_DIR', ROOT_DIR . '/src/');
+}
+
 if (! function_exists('json')) {
     /**
      * JSON response wrapper.
