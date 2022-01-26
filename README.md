@@ -5,13 +5,13 @@ and [Swoole](https://github.com/swoole/swoole-src) an event-based asynchronous P
 
 ## Requirements
 
-* PHP 8
-* `swoole` extension
-* `inotify` extension (optional but see below)
+* [PHP 8](https://www.php.net/releases/8.0/en.php)
+* [swoole](https://github.com/swoole/swoole-src) extension
+* [inotify](https://www.php.net/manual/en/book.inotify.php) extension (optional but see below)
 
 ## Getting Started
 
-Start your new project with composer:
+Start your new project with [composer](https://getcomposer.org/):
 
 ```bash
 $ composer create-project skoro/slim-swoole-project <project-path>
