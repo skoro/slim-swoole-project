@@ -6,11 +6,13 @@ use Dotenv\Dotenv;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Slim\App;
 use Slim\Factory\AppFactory;
+use Tests\Support\SampleLoader;
 use Tests\Support\SendRequest;
 
 class TestCase extends BaseTestCase
 {
     use SendRequest;
+    use SampleLoader;
 
     protected App $app;
 
