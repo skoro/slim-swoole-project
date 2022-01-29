@@ -74,3 +74,16 @@ if (! function_exists('logger')) {
              ? $container->get(LoggerInterface::class) : new DumpLogger();
     }
 }
+
+if (! function_exists('unique_id')) {
+    /**
+     * Generate a unique id.
+     *
+     * @see random_bytes()
+     * @throws Exception When an appropriate source of randomness cannot be found.
+     */
+    function unique_id(int $length = 8): string
+    {
+        return bin2hex(random_bytes($length));
+    }
+}
