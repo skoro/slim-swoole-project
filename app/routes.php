@@ -2,7 +2,7 @@
 
 use Slim\App;
 
-return function (App $app) {
+return function (App $app): void {
 
     $app->get('/', fn () => json(['status' => 'ok']));
 

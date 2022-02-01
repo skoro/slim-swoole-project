@@ -15,8 +15,7 @@ use Slim\App;
 use Swoole\Http\Server as HttpServer;
 use Swoole\Runtime;
 
-return function (App $app): HttpServer
-{
+return function (App $app): HttpServer {
     /**
      * @link https://openswoole.com/docs/modules/swoole-runtime-flags
      */

@@ -16,7 +16,7 @@ use Slim\Swoole\FileWatchers\InotifyWatcher;
 use Slim\Swoole\HotCodeReloader;
 use Swoole\Http\Server;
 
-return function (App $app, Server $server) {
+return function (App $app, Server $server): void {
 
     $watcher = new InotifyWatcher();
 
