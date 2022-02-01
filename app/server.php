@@ -23,7 +23,7 @@ return function (App $app): HttpServer {
      */
     Runtime::enableCoroutine(true, SWOOLE_HOOK_ALL);
 
-    $server = new HttpServer(env('SERVER_ADDR', 'localhost'), env('SERVER_PORT', 9501));
+    $server = new HttpServer(env('SERVER_ADDR', 'localhost'), (int) env('SERVER_PORT', 9501));
 
     $server->set([
         'worker_num' => env('WORKER_NUM'),
