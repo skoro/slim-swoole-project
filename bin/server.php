@@ -39,7 +39,7 @@ $server->on('start', function (HttpServer $server) use ($app) {
             (include APP_DIR . 'debug.php')($app, $server);
         })($app, $server);
     }
-    logger($app)->info('Server is started.');
+    logger($app)->info(sprintf('Server is started on %s:%d', $server->host, $server->port));
 });
 
 $server->start();
