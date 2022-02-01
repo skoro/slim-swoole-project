@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Tests\Support;
 
@@ -9,10 +11,8 @@ use Psr\Http\Message\StreamInterface;
 
 class TestResponse implements Response
 {
-    public function __construct(
-        private TestCase $testCase,
-        private Response $response,
-    ) {
+    public function __construct(private TestCase $testCase, private Response $response,)
+    {
     }
 
     public function assertStatusCode(int $expectedStatusCode): void
@@ -101,7 +101,8 @@ class TestResponse implements Response
 
     public function withStatus($code, $reasonPhrase = ''): Response
     {
-        return $this->response->withStatus($code, $reasonPhrase); /** @phpstan-ignore-line */
+        /** @phpstan-ignore-next-line */
+        return $this->response->withStatus($code, $reasonPhrase);
     }
 
     public function getReasonPhrase(): string
