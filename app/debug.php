@@ -11,6 +11,8 @@
  * - `FS_WATCH_DELAY` - how often to check source code changes, by default 1000 ms.
  */
 
+declare(strict_types=1);
+
 use Slim\App;
 use Slim\Swoole\FileWatchers\InotifyWatcher;
 use Slim\Swoole\HotCodeReloader;

@@ -11,6 +11,8 @@
  * @link https://openswoole.com/docs/modules/swoole-server/configuration
  */
 
+declare(strict_types=1);
+
 use Slim\App;
 use Swoole\Http\Server as HttpServer;
 use Swoole\Runtime;

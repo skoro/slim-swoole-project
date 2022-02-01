@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Dotenv\Dotenv;
 use Slim\Factory\AppFactory;
 use Slim\Swoole\ServerRequestFactory;
@@ -26,7 +28,6 @@ $server->on('workerStart', function (HttpServer $server) use ($app) {
     (function ($app) {
         (require APP_DIR . 'routes.php')($app);
     })($app);
-
 });
 
 $server->on('request', ServerRequestFactory::createRequestCallback($app));

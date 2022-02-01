@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 use Slim\App;
 
@@ -16,5 +18,4 @@ return function (App $app): void {
 //     $src->addBodyParsingMiddleware();
 
     // Put your global middlewares here...
-
 };
