@@ -15,11 +15,7 @@ AppFactory::setContainer((function () {
 })());
 
 $app = AppFactory::create();
-
-$server = new HttpServer(env('SERVER_ADDR', 'localhost'), env('SERVER_PORT', 9501));
-$server->set((function () {
-    return include APP_DIR . 'server.php';
-})());
+$server = (require APP_DIR . 'server.php')($app);
 
 $server->on('workerStart', function (HttpServer $server) use ($app) {
 
