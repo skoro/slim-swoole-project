@@ -13,8 +13,14 @@
 
 use Slim\App;
 use Swoole\Http\Server as HttpServer;
+use Swoole\Runtime;
 
-return function (App $app): HttpServer {
+return function (App $app): HttpServer
+{
+    /**
+     * @link https://openswoole.com/docs/modules/swoole-runtime-flags
+     */
+    Runtime::enableCoroutine(true, SWOOLE_HOOK_ALL);
 
     $server = new HttpServer(env('SERVER_ADDR', 'localhost'), env('SERVER_PORT', 9501));
 
