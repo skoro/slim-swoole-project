@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Global functions.
+ */
+
 declare(strict_types=1);
 
 use Laminas\Diactoros\Response\JsonResponse;

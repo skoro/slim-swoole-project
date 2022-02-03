@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Application and route middlewares.
+ *
+ * @link https://www.slimframework.com/docs/v4/middleware/routing.html
+ */
+
 declare(strict_types=1);
 
 use Slim\App;
