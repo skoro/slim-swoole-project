@@ -11,7 +11,7 @@ use Psr\Http\Message\StreamInterface;
 
 class TestResponse implements Response
 {
-    public function __construct(private TestCase $testCase, private Response $response,)
+    public function __construct(private TestCase $testCase, private Response $response)
     {
     }
 

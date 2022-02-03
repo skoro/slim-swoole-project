@@ -17,6 +17,7 @@ class TestCase extends BaseTestCase
     use SampleLoader;
 
     protected App $app;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -27,12 +28,16 @@ class TestCase extends BaseTestCase
     {
         $rootDir = dirname(__DIR__);
         $appDir = $rootDir . '/app/';
+
         $dotenv = Dotenv::createImmutable($rootDir, ['.env.testing', '.env']);
         $dotenv->safeLoad();
+
         AppFactory::setContainer((require $appDir . 'container.php')());
         $app = AppFactory::create();
+
         (require $appDir . 'middlewares.php')($app);
         (require $appDir . 'routes.php')($app);
+
         return $app;
     }
 }
