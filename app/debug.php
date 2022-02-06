@@ -20,17 +20,21 @@ use Swoole\Http\Server;
 
 return function (App $app, Server $server): void {
 
-    $watcher = new InotifyWatcher();
+    try {
+        $watcher = new InotifyWatcher();
 
-    // Directories to be checked for changes.
-    // Any changes inside those directories will force to reload the server:
-    // - `app`
-    // - `src`
-    $watcher->addFilePath(APP_DIR);
-    $watcher->addFilePath(SRC_DIR);
+        // Directories to be checked for changes.
+        // Any changes inside those directories will force to reload the server:
+        // - `app`
+        // - `src`
+        $watcher->addFilePath(APP_DIR);
+        $watcher->addFilePath(SRC_DIR);
 
-    $reloader = new HotCodeReloader($watcher, $server, (int) env('FS_WATCH_DELAY', 1000));
-    $reloader->start();
+        $reloader = new HotCodeReloader($watcher, $server, (int) env('FS_WATCH_DELAY', 1000));
+        $reloader->start();
 
-    logger($app)->debug('Debug mode and hot code reloading are enabled.');
+        logger($app)->debug('Debug mode and hot code reloading are enabled.');
+    } catch (Throwable $e) {
+        logger($app)->warning('Debug mode cannot be enabled: ' . $e->getMessage());
+    }
 };
