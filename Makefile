@@ -3,8 +3,9 @@
 # Before using targets please be sure `.env` file is exist.
 
 DOCKER=docker
+DOTENV=.env
 
-include .env
+include $(DOTENV)
 
 .PHONY: build composer php
 
@@ -13,7 +14,11 @@ include .env
 
 ### Builds the application image.
 build:
-	$(DOCKER) build . -t $(APP_NAME)
+	@if [ -f $(DOTENV) ]; then \
+		$(DOCKER) build . -t $(APP_NAME); \
+	else \
+		echo "Error: create $(DOTENV) file in order to build a docker image."; \
+	fi
 
 RUNOPTS=run \
 	-it --rm \
