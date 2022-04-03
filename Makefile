@@ -37,3 +37,7 @@ composer:
 
 php:
 	$(DOCKER) $(RUNOPTS) php $(filter-out $@,$(MAKECMDGOALS))
+
+start-server:
+	$(DOCKER) $(RUNOPTS) composer -- run server
+
