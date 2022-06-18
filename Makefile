@@ -23,9 +23,7 @@ build:
 RUNOPTS=run \
 	-it --rm \
 	--volume $(shell pwd):/var/www \
-	--user $(shell id -u):$(shell id -g) \
-	--publish $(SERVER_PORT):$(SERVER_PORT)/tcp \
-	$(APP_NAME)
+	--user $(shell id -u):$(shell id -g)
 
 ### Run composer.
 ### Example:
@@ -33,11 +31,11 @@ RUNOPTS=run \
 ### If you need to pass an option use double dash:
 ### $ make composer -- install --help
 composer:
-	$(DOCKER) $(RUNOPTS) composer $(filter-out $@,$(MAKECMDGOALS))
+	$(DOCKER) $(RUNOPTS) $(APP_NAME) composer $(filter-out $@,$(MAKECMDGOALS))
 
 php:
-	$(DOCKER) $(RUNOPTS) php $(filter-out $@,$(MAKECMDGOALS))
+	$(DOCKER) $(RUNOPTS) $(APP_NAME) php $(filter-out $@,$(MAKECMDGOALS))
 
 start-server:
-	$(DOCKER) $(RUNOPTS) composer -- run server
+	$(DOCKER) $(RUNOPTS) --publish $(SERVER_PORT):$(SERVER_PORT)/tcp $(APP_NAME) composer -- run server
 
