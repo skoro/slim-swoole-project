@@ -1,4 +1,4 @@
-FROM phpswoole/swoole:4.8-php8.0
+FROM phpswoole/swoole:4.8-php8.1
 
 RUN pecl update-channels \
 	&& pecl install inotify \
