@@ -17,7 +17,19 @@ Start your new project with [composer](https://getcomposer.org/):
 $ composer create-project skoro/slim-swoole-project <project-path>
 ```
 
-After installing `cd <project-path>` to project directory.
+### Getting started with Docker
+
+Download or clone this project then cd into the project directory and build
+a container:
+```bash
+docker-compose build --no-cache
+```
+
+Install dependencies and run the server:
+```bash
+docker-compose exec php composer install
+docker-compose exec php composer run server
+```
 
 ### Configuring
 

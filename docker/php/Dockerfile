@@ -10,7 +10,7 @@ RUN composer selfupdate
 # remove server demo from swoole image
 RUN rm /var/www/server.php
 
-COPY . /var/www
+COPY ../.. /var/www
 
 WORKDIR /var/www
 
