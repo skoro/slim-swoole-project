@@ -27,6 +27,7 @@ docker-compose build --no-cache
 
 Install dependencies and run the server:
 ```bash
+docker-compose up -d
 docker-compose exec php composer install
 docker-compose exec php composer run server
 ```
