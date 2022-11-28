@@ -16,4 +16,7 @@ RUN rm /var/www/server.php
 
 COPY . /var/www
 
+# Disable swoole demo server (/usr/local/boot/disable-default-server.sh).
+ENV DISABLE_DEFAULT_SERVER 1
+
 WORKDIR /var/www
