@@ -5,8 +5,8 @@ and [Swoole](https://github.com/swoole/swoole-src) an event-based asynchronous P
 
 ## Requirements
 
-* [PHP 8](https://www.php.net/releases/8.0/en.php)
-* [swoole](https://github.com/swoole/swoole-src) extension
+* [PHP >=8.1](https://www.php.net/releases/8.1/en.php)
+* [swoole >=5.0](https://github.com/swoole/swoole-src) extension
 * [inotify](https://www.php.net/manual/en/book.inotify.php) extension (optional but see below)
 
 ## Getting Started
