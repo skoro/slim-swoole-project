@@ -1,4 +1,4 @@
-FROM phpswoole/swoole:4.8-php8.1
+FROM phpswoole/swoole:5.0-php8.1
 
 RUN set -ex \
     && apt update && apt upgrade --yes \

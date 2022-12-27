@@ -69,7 +69,7 @@ trait SendRequest
             uri: $uri,
             method: $method,
             headers: $headers,
-            cookies: $cookies,
+            cookieParams: $cookies,
             parsedBody: $parsedBody,
             body: 'php://temp',
             queryParams: $query,
